@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
@@ -36,20 +35,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ir.hosseindevat.digikala_product_page.ui.theme.BlueText
 import ir.hosseindevat.digikala_product_page.ui.theme.GrayLight
 import ir.hosseindevat.digikala_product_page.ui.theme.MagentaMain
-import ir.hosseindevat.digikala_product_page.ui.theme.PurpleGrey40
 import ir.hosseindevat.digikala_product_page.ui.theme.YellowMain
 
 class MainActivity : ComponentActivity() {
@@ -57,17 +52,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
 
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         setContent {
             SetUI()
         }
     }
 
     @Preview(
-        name = "hossein",
+        name = "Digikala",
         showBackground = true,
-        widthDp = 500,
-        heightDp = 1300
+        widthDp = 450,
+        heightDp = 1250
     )
 
     @Composable
@@ -76,18 +71,18 @@ class MainActivity : ComponentActivity() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(rememberScrollState())
                 .background(Color.White)
-        ) {
+                .padding(10.dp)
+                .verticalScroll(rememberScrollState())
 
-            Spacer(Modifier.height(30.dp))
+        ) {
 
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(3.dp)
-                    .padding(horizontal = 12.dp)
-                    .background(Color.Red),
+                    .background(Color.Red, shape = CircleShape)
+                    .padding(8.dp)
             )
 
             Spacer(Modifier.height(40.dp))
@@ -100,46 +95,50 @@ class MainActivity : ComponentActivity() {
                     .height(200.dp)
             )
 
-            Spacer(Modifier.height(30.dp))
+            Spacer(Modifier.height(50.dp))
 
-            Text(
-                "گوشی موبایل آیفون نسخه پرایم اصل",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(end = 14.dp),
-                textAlign = TextAlign.End
-            )
+            Box(
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    "گوشی موبایل آیفون 16 حافظه 512 گیگ",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(end = 10.dp),
+                    textAlign = TextAlign.End
+                )
+            }
 
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(15.dp))
 
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.End
             ) {
+
                 Text(
                     "پرسش و پاسخ",
                     fontSize = 14.sp,
                     color = BlueText,
                     modifier = Modifier
-                        .padding(end = 4.dp),
-                    textAlign = TextAlign.End
+                        .padding(end = 4.dp)
                 )
 
                 Text(
-                    "3",
+                    "10",
                     fontSize = 14.sp,
                     color = BlueText,
-                    textAlign = TextAlign.End
                 )
 
                 Box(
-                    Modifier
-                        .padding(10.dp)
-                        .size(5.dp)
+                    modifier = Modifier
+                        .padding(horizontal = 8.dp)
                         .background(Color.Gray, shape = CircleShape)
+                        .size(5.dp)
                 )
 
                 Text(
@@ -147,46 +146,44 @@ class MainActivity : ComponentActivity() {
                     fontSize = 14.sp,
                     color = BlueText,
                     modifier = Modifier
-                        .padding(end = 4.dp),
-                    textAlign = TextAlign.End
+                        .padding(end = 4.dp)
                 )
 
                 Text(
                     "8",
                     fontSize = 14.sp,
                     color = BlueText,
-                    textAlign = TextAlign.End
                 )
 
                 Box(
-                    Modifier
-                        .padding(10.dp)
-                        .size(5.dp)
+                    modifier = Modifier
+                        .padding(horizontal = 8.dp)
                         .background(Color.Gray, shape = CircleShape)
+                        .size(5.dp)
                 )
 
                 Text(
-                    "(10)",
+                    "(58)",
                     fontSize = 14.sp,
                     color = Color.Gray,
-                    textAlign = TextAlign.End
+                    modifier = Modifier
+                        .padding(end = 4.dp)
                 )
 
                 Text(
                     "4.2",
                     fontSize = 14.sp,
-                    modifier = Modifier
-                        .padding(end = 2.dp),
+                    color = Color.Black,
                 )
 
                 Icon(
                     Icons.Default.Star,
-                    contentDescription = "",
                     tint = YellowMain,
                     modifier = Modifier
-                        .padding(end = 12.dp)
-                        .size(18.dp)
+                        .padding(horizontal = 5.dp),
+                    contentDescription = ""
                 )
+
 
             }
 
@@ -195,11 +192,11 @@ class MainActivity : ComponentActivity() {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(10.dp)
+                    .height(8.dp)
                     .background(GrayLight)
             )
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(30.dp))
 
             Text(
                 "ویژگی های محصول",
@@ -207,14 +204,15 @@ class MainActivity : ComponentActivity() {
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(end = 14.dp),
+                    .padding(end = 8.dp),
                 textAlign = TextAlign.End
             )
 
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(15.dp))
 
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.End
             ) {
@@ -222,383 +220,373 @@ class MainActivity : ComponentActivity() {
                 Text(
                     "آمریکا",
                     fontSize = 14.sp,
-                    color = PurpleGrey40
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Gray,
                 )
 
                 Text(
                     ":",
                     fontSize = 14.sp,
-                    color = PurpleGrey40,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.LightGray,
                     modifier = Modifier
-                        .padding(horizontal = 4.dp)
+                        .padding(horizontal = 5.dp)
                 )
 
                 Text(
-                    "کشور تولید",
+                    "کشور سازنده",
                     fontSize = 14.sp,
-                    color = PurpleGrey40
+                    fontWeight = FontWeight.Bold,
+                    color = Color.LightGray,
                 )
 
                 Box(
-                    Modifier
-                        .padding(start = 10.dp, end = 14.dp)
+                    modifier = Modifier
+                        .padding(horizontal = 8.dp)
+                        .background(Color.LightGray, shape = CircleShape)
                         .size(5.dp)
-                        .background(Color.Gray, shape = CircleShape)
                 )
             }
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(30.dp))
 
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(1.dp)
-                    .background(Color.LightGray)
+                    .height(2.dp)
+                    .background(GrayLight)
             )
 
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(20.dp))
 
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
+            Row {
 
                 Icon(
-                    painter = painterResource(R.drawable.arrow),
-                    tint = Color.Gray,
+                    painterResource(R.drawable.arrow),
                     contentDescription = "",
-                    modifier = Modifier
-                        .padding(10.dp)
-                        .size(28.dp),
+                    tint = Color.Gray,
+                    modifier = Modifier.size(35.dp)
                 )
 
                 Text(
                     "مشخصات فنی",
                     fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
                     modifier = Modifier
-                        .padding(end = 14.dp)
+                        .fillMaxWidth()
+                        .padding(end = 6.dp),
+                    textAlign = TextAlign.End
                 )
-
             }
 
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(20.dp))
 
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(1.dp)
-                    .background(Color.LightGray)
+                    .height(2.dp)
+                    .background(GrayLight)
             )
 
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(20.dp))
 
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
+            Row {
 
                 Icon(
-                    painter = painterResource(R.drawable.arrow),
-                    tint = Color.Gray,
+                    painterResource(R.drawable.arrow),
                     contentDescription = "",
-                    modifier = Modifier
-                        .padding(10.dp)
-                        .size(28.dp),
+                    tint = Color.Gray,
+                    modifier = Modifier.size(35.dp)
                 )
 
                 Text(
                     "معرفی اجمالی محصول",
                     fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
                     modifier = Modifier
-                        .padding(end = 14.dp)
+                        .fillMaxWidth()
+                        .padding(end = 6.dp),
+                    textAlign = TextAlign.End
                 )
-
             }
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(30.dp))
 
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .horizontalScroll(
-                        rememberScrollState(),
-                        reverseScrolling = true
-                    )
-                    .background(GrayLight)
-                    .padding(10.dp),
+                    .horizontalScroll(rememberScrollState(), reverseScrolling = true)
+                    .background(GrayLight),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.End
             ) {
 
-                for (item in 10 downTo 1) {
-
-                    Spacer(Modifier.width(10.dp))
-
+                for (item in 1..10) {
                     Card(
+                        modifier = Modifier
+                            .padding(10.dp),
                         shape = CircleShape,
-                        colors = CardDefaults.cardColors(containerColor = Color.White),
-                        elevation = CardDefaults.cardElevation(4.dp)
+                        elevation = CardDefaults.cardElevation(4.dp),
+                        colors = CardDefaults.cardColors(containerColor = Color.White)
                     ) {
 
                         Row(
-                            modifier = Modifier.padding(10.dp),
-                            verticalAlignment = Alignment.CenterVertically
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(10.dp),
+                            verticalAlignment = Alignment.CenterVertically,
                         ) {
 
                             Icon(
-                                painter = painterResource(R.drawable.arrow),
+                                painterResource(R.drawable.arrow),
+                                contentDescription = "",
                                 tint = Color.Gray,
-                                contentDescription = ""
+                                modifier = Modifier.size(35.dp)
                             )
 
                             Text(
-                                "محصول تستی شماره $item",
-                                fontSize = 16.sp,
+                                "دسته بندی محصول",
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.Bold,
                                 modifier = Modifier
-                                    .padding(end = 14.dp)
+                                    .fillMaxWidth()
+                                    .padding(end = 6.dp),
+                                textAlign = TextAlign.End
                             )
-
                         }
 
                     }
-
                 }
 
             }
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(30.dp))
 
             Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-
-                ) {
+                modifier = Modifier
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
 
                 Text(
                     "نظر",
-                    fontSize = 16.sp,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = BlueText,
                     modifier = Modifier
-                        .padding(start = 10.dp),
-                    color = BlueText
+                        .padding(end = 4.dp, start = 10.dp)
                 )
 
                 Text(
-                    "8",
-                    fontSize = 16.sp,
-                    modifier = Modifier.padding(start = 4.dp),
-                    color = BlueText
+                    "10",
+                    fontSize = 14.sp,
+                    color = BlueText,
+                    fontWeight = FontWeight.Bold,
                 )
+
 
                 Text(
                     "دیدگاه کاربران",
-                    fontSize = 18.sp,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(end = 14.dp),
-                    textAlign = TextAlign.End,
-                    fontWeight = FontWeight.Bold
+                        .padding(end = 10.dp),
+                    textAlign = TextAlign.End
                 )
 
             }
 
-            Spacer(Modifier.height(40.dp))
+            Spacer(Modifier.height(50.dp))
 
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .horizontalScroll(
-                        rememberScrollState(),
-                        reverseScrolling = true
-                    ),
-                verticalAlignment = Alignment.CenterVertically,
+                    .padding(10.dp)
+                    .horizontalScroll(rememberScrollState(), reverseScrolling = true),
+                verticalAlignment = Alignment.CenterVertically
             ) {
 
-                for (item in 1..8) {
+
+                for (item in 8 downTo 1) {
 
                     Spacer(Modifier.width(8.dp))
 
                     Card(
-                        modifier = Modifier.width(280.dp),
-                        shape = AbsoluteRoundedCornerShape(10.dp),
-                        elevation = CardDefaults.cardElevation(4.dp),
+                        modifier = Modifier
+                            .width(280.dp),
                         colors = CardDefaults.cardColors(containerColor = Color.White),
-                        border = BorderStroke(1.dp, Color.LightGray)
+                        elevation = CardDefaults.cardElevation(8.dp),
                     ) {
 
                         Spacer(Modifier.height(20.dp))
 
                         Row(
-                            modifier = Modifier.fillMaxWidth(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(10.dp),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.End
                         ) {
+
+
                             Text(
                                 "خریدار",
-                                fontSize = 14.sp,
+                                fontSize = 12.sp,
                                 fontWeight = FontWeight.Bold,
-                                modifier = Modifier.padding(end = 4.dp)
+                                modifier = Modifier
+                                    .padding(end = 4.dp),
                             )
 
                             Icon(
                                 Icons.Outlined.Person,
                                 contentDescription = "",
-                                modifier = Modifier.padding(end = 12.dp)
                             )
 
                         }
 
+
                         Text(
-                            "بهترین گوشی دنیاس و بنظرم به شدت ارزش خرید بسیار بالایی داره",
-                            fontSize = 14.sp,
+                            "گوشی موبایل خیلی خوبیه و تقریبا از پس تمام کارهای حرفه ای برمیاد",
+                            fontSize = 12.sp,
                             fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(end = 12.dp, start = 10.dp, top = 10.dp),
+                            modifier = Modifier
+                                .padding(end = 4.dp),
                             textAlign = TextAlign.End
                         )
 
                         Spacer(Modifier.height(40.dp))
 
                         Row(
-                            modifier = Modifier.fillMaxWidth(),
+                            modifier = Modifier.fillMaxWidth().padding(4.dp),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.End
                         ) {
 
                             Text(
                                 "حسین حسینی",
-                                fontSize = 14.sp,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold,
                                 color = Color.Gray,
-                                modifier = Modifier
-                                    .padding(bottom = 16.dp)
                             )
 
                             Box(
-                                Modifier
-                                    .padding(start = 8.dp, end = 8.dp, bottom = 16.dp)
-                                    .size(5.dp)
+                                modifier = Modifier
+                                    .padding(horizontal = 8.dp)
                                     .background(Color.Gray, shape = CircleShape)
+                                    .size(5.dp)
                             )
 
                             Text(
                                 "روز قبل",
-                                modifier = Modifier
-                                    .padding(end = 12.dp, bottom = 16.dp),
-                                fontSize = 14.sp,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold,
                                 color = Color.Gray,
+                                modifier = Modifier
+                                    .padding(end = 4.dp),
+                                textAlign = TextAlign.End
+                            )
+
+                            Text(
+                                "$item",
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.Gray,
+                                modifier = Modifier
+                                    .padding(end = 4.dp),
+                                textAlign = TextAlign.End
                             )
 
                         }
 
+                        Spacer(Modifier.height(20.dp))
+
                     }
-                    Spacer(Modifier.height(8.dp))
                 }
 
             }
 
             Spacer(Modifier.height(20.dp))
 
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                shape = RectangleShape,
-                colors = CardDefaults.cardColors(containerColor = Color.White),
-                elevation = CardDefaults.cardElevation(12.dp)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
             ) {
 
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp, vertical = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically,
+                Column(
+                    modifier = Modifier.padding(8.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
 
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
+                        Text(
+                            "100,000,000",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.Gray,
+                            textDecoration = TextDecoration.LineThrough
+                        )
 
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically
+                        Box(
+                            modifier = Modifier
+                                .padding(horizontal = 4.dp)
+                                .background(MagentaMain, CircleShape)
+                                .padding(6.dp)
                         ) {
 
                             Text(
-                                "100,000,000",
+                                "20 %",
                                 fontSize = 12.sp,
-                                color = Color.Gray,
-                                modifier = Modifier
-                                    .padding(end = 6.dp),
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White,
                                 textDecoration = TextDecoration.LineThrough
-
                             )
 
-                            Text(
-                                "20%",
-                                fontSize = 12.sp,
-                                color = Color.White,
-                                modifier = Modifier
-                                    .padding(end = 6.dp)
-                                    .background(
-                                        MagentaMain,
-                                        CircleShape
-                                    )
-                                    .padding(horizontal = 4.dp, vertical = 2.dp),
-
-                                )
-
                         }
-
-                        Spacer(Modifier.height(6.dp))
-
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-
-                            Text(
-                                "تومان",
-                                fontSize = 14.sp,
-                                modifier = Modifier
-                                    .padding(end = 6.dp),
-                                )
-
-                            Text(
-                                "80,000,000",
-                                fontSize = 16.sp,
-                                modifier = Modifier
-                                    .padding(end = 6.dp),
-                                )
-
-                        }
-
                     }
 
 
-                    Box(
-                        modifier = Modifier.fillMaxWidth(),
-                        contentAlignment = Alignment.CenterEnd
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
+                        Text(
+                            "تومان",
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.Bold,
+                        )
 
-                        Button(
-                            onClick = {},
-                            shape = AbsoluteRoundedCornerShape(10.dp),
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = MagentaMain
-                            )
-                        ) {
-
-                            Text(
-                                "افزودن به سبد خرید",
-                                fontSize = 16.sp,
-                                color = Color.White,
-                                fontWeight = FontWeight.Bold,
-                            )
-
-                        }
-
+                        Text(
+                            "80,000,000",
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier
+                                .padding(horizontal = 4.dp)
+                        )
                     }
 
                 }
 
+                Box(
+                    modifier = Modifier.fillMaxWidth().padding(end = 8.dp),
+                    contentAlignment = Alignment.CenterEnd
+                ) {
+                    Button(
+                        onClick = {},
+                        colors = ButtonDefaults.buttonColors(containerColor = MagentaMain),
+                        elevation = ButtonDefaults.buttonElevation(4.dp),
+                        shape = AbsoluteRoundedCornerShape(10.dp)
+                    ) {
+                        Text(
+                            "افزودن به سبد خرید",
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier
+                                .padding(vertical = 6.dp)
+                        )
+                    }
+                }
 
             }
 
